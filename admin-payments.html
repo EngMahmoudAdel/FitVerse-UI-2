@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments Dashboard - FitVerse Admin</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">💪</div>
+                FitVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html"><i class="bi bi-people"></i> Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-coaches.html"><i class="bi bi-person-badge"></i> Coaches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-clients.html"><i class="bi bi-person-check"></i> Clients</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-gear"></i> System
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="admin-equipment.html"><i class="bi bi-tools me-2"></i>Equipment</a></li>
+                            <li><a class="dropdown-item" href="admin-exercises.html"><i class="bi bi-lightning me-2"></i>Exercises</a></li>
+                            <li><a class="dropdown-item" href="admin-anatomy.html"><i class="bi bi-person-arms-up me-2"></i>Anatomy</a></li>
+                            <li><a class="dropdown-item" href="admin-muscles.html"><i class="bi bi-heart-pulse me-2"></i>Muscles</a></li>
+                            <li><a class="dropdown-item" href="admin-packages.html"><i class="bi bi-box-seam me-2"></i>Packages</a></li>
+                            <li><a class="dropdown-item" href="admin-specialties.html"><i class="bi bi-award me-2"></i>Specialties</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin-payments.html"><i class="bi bi-cash-coin"></i> Payments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-reports.html"><i class="bi bi-graph-up"></i> Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link notification-bell position-relative" href="notifications.html">
+                            <i class="bi bi-bell fs-5"></i>
+                            <span class="notification-badge">5</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="https://ui-avatars.com/api/?name=Admin&background=6366f1&color=fff" alt="Admin" class="user-avatar">
+                            <span>Admin</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid px-4 py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="fw-bold mb-1">Payments Dashboard</h2>
+                <p class="text-muted mb-0">Track revenue, commissions, and payment transactions</p>
+            </div>
+            <div class="d-flex gap-2">
+                <select class="form-control-custom" style="width: auto;">
+                    <option>This Month</option>
+                    <option>Last Month</option>
+                    <option>Last 3 Months</option>
+                    <option>This Year</option>
+                </select>
+                <button class="btn btn-primary-custom">
+                    <i class="bi bi-download"></i> Export Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Revenue Overview -->
+        <div class="row g-4 mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card primary">
+                    <div class="stat-icon primary"><i class="bi bi-cash-stack"></i></div>
+                    <div class="stat-value">$67,840</div>
+                    <div class="stat-label">Total Revenue</div>
+                    <div class="stat-change positive"><i class="bi bi-arrow-up"></i> +18.7% vs last month</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card success">
+                    <div class="stat-icon success"><i class="bi bi-wallet2"></i></div>
+                    <div class="stat-value">$54,272</div>
+                    <div class="stat-label">Admin Revenue (80%)</div>
+                    <div class="stat-change positive"><i class="bi bi-arrow-up"></i> +16.2%</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card warning">
+                    <div class="stat-icon warning"><i class="bi bi-person-badge"></i></div>
+                    <div class="stat-value">$13,568</div>
+                    <div class="stat-label">Coach Commission (20%)</div>
+                    <div class="stat-change positive"><i class="bi bi-arrow-up"></i> +22.4%</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card danger">
+                    <div class="stat-icon danger"><i class="bi bi-box-seam"></i></div>
+                    <div class="stat-value">1,234</div>
+                    <div class="stat-label">Packages Sold</div>
+                    <div class="stat-change positive"><i class="bi bi-arrow-up"></i> +23.1%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Chart -->
+        <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+                <div class="card-custom">
+                    <div class="card-header-custom">
+                        <i class="bi bi-graph-up me-2"></i> Revenue Trend
+                    </div>
+                    <div class="card-body-custom">
+                        <canvas id="revenueChart" height="80"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card-custom">
+                    <div class="card-header-custom">
+                        <i class="bi bi-pie-chart me-2"></i> Revenue Split
+                    </div>
+                    <div class="card-body-custom">
+                        <canvas id="revenueSplitChart"></canvas>
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="d-flex align-items-center gap-2">
+                                    <span style="width: 12px; height: 12px; background: #10b981; border-radius: 2px;"></span>
+                                    Admin (80%)
+                                </span>
+                                <strong>$54,272</strong>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="d-flex align-items-center gap-2">
+                                    <span style="width: 12px; height: 12px; background: #f59e0b; border-radius: 2px;"></span>
+                                    Coaches (20%)
+                                </span>
+                                <strong>$13,568</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Performance -->
+        <div class="card-custom mb-4">
+            <div class="card-header-custom">
+                <i class="bi bi-box-seam me-2"></i> Package Performance
+            </div>
+            <div class="card-body-custom p-0">
+                <div class="table-responsive">
+                    <table class="table table-custom mb-0">
+                        <thead>
+                            <tr>
+                                <th>Package</th>
+                                <th>Price</th>
+                                <th>Sold</th>
+                                <th>Total Revenue</th>
+                                <th>Admin Share (80%)</th>
+                                <th>Coach Share (20%)</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="fw-semibold">Package 1: Basic</div>
+                                    <small class="text-muted">Exercises + Plans</small>
+                                </td>
+                                <td class="fw-bold">$29/mo</td>
+                                <td>638</td>
+                                <td class="fw-bold text-primary">$18,502</td>
+                                <td class="text-success">$14,802</td>
+                                <td class="text-warning">$3,700</td>
+                                <td><span class="text-success"><i class="bi bi-arrow-up"></i> +15%</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="fw-semibold">Package 2: Pro</div>
+                                    <small class="text-muted">Exercises + Plans + Chat + AI</small>
+                                </td>
+                                <td class="fw-bold">$59/mo</td>
+                                <td>556</td>
+                                <td class="fw-bold text-primary">$32,804</td>
+                                <td class="text-success">$26,243</td>
+                                <td class="text-warning">$6,561</td>
+                                <td><span class="text-success"><i class="bi bi-arrow-up"></i> +28%</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="fw-semibold">Package 3: Elite</div>
+                                    <small class="text-muted">Exercises + Plans + Chat + Video + AI</small>
+                                </td>
+                                <td class="fw-bold">$99/mo</td>
+                                <td>167</td>
+                                <td class="fw-bold text-primary">$16,533</td>
+                                <td class="text-success">$13,226</td>
+                                <td class="text-warning">$3,307</td>
+                                <td><span class="text-success"><i class="bi bi-arrow-up"></i> +32%</span></td>
+                            </tr>
+                            <tr style="background: #f8fafc; font-weight: bold;">
+                                <td colspan="3">TOTAL</td>
+                                <td class="text-primary">$67,839</td>
+                                <td class="text-success">$54,271</td>
+                                <td class="text-warning">$13,568</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coach Earnings -->
+        <div class="card-custom mb-4">
+            <div class="card-header-custom">
+                <i class="bi bi-person-badge me-2"></i> Top Coach Earnings
+            </div>
+            <div class="card-body-custom p-0">
+                <div class="table-responsive">
+                    <table class="table table-custom mb-0">
+                        <thead>
+                            <tr>
+                                <th>Coach</th>
+                                <th>Clients</th>
+                                <th>Packages Sold</th>
+                                <th>Total Revenue Generated</th>
+                                <th>Coach Commission (20%)</th>
+                                <th>Admin Revenue (80%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://ui-avatars.com/api/?name=Alex+Turner&background=6366f1&color=fff" alt="Coach" style="width: 35px; height: 35px; border-radius: 50%;">
+                                        <span class="fw-semibold">Alex Turner</span>
+                                    </div>
+                                </td>
+                                <td>156</td>
+                                <td>156</td>
+                                <td class="fw-bold">$9,204</td>
+                                <td class="text-warning fw-bold">$1,841</td>
+                                <td class="text-success">$7,363</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://ui-avatars.com/api/?name=Maria+Garcia&background=10b981&color=fff" alt="Coach" style="width: 35px; height: 35px; border-radius: 50%;">
+                                        <span class="fw-semibold">Maria Garcia</span>
+                                    </div>
+                                </td>
+                                <td>142</td>
+                                <td>142</td>
+                                <td class="fw-bold">$8,378</td>
+                                <td class="text-warning fw-bold">$1,676</td>
+                                <td class="text-success">$6,702</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="https://ui-avatars.com/api/?name=David+Lee&background=f59e0b&color=fff" alt="Coach" style="width: 35px; height: 35px; border-radius: 50%;">
+                                        <span class="fw-semibold">David Lee</span>
+                                    </div>
+                                </td>
+                                <td>128</td>
+                                <td>128</td>
+                                <td class="fw-bold">$7,552</td>
+                                <td class="text-warning fw-bold">$1,510</td>
+                                <td class="text-success">$6,042</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="card-custom">
+            <div class="card-header-custom">
+                <i class="bi bi-clock-history me-2"></i> Recent Transactions
+            </div>
+            <div class="card-body-custom p-0">
+                <div class="table-responsive">
+                    <table class="table table-custom mb-0">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Client</th>
+                                <th>Coach</th>
+                                <th>Package</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct 20, 2024</td>
+                                <td>Sarah Miller</td>
+                                <td>Alex Turner</td>
+                                <td><span class="badge-custom badge-primary">Pro Package</span></td>
+                                <td class="fw-bold">$59.00</td>
+                                <td><span class="badge-custom badge-success">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Oct 20, 2024</td>
+                                <td>John Smith</td>
+                                <td>Maria Garcia</td>
+                                <td><span class="badge-custom badge-warning">Elite Package</span></td>
+                                <td class="fw-bold">$99.00</td>
+                                <td><span class="badge-custom badge-success">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Oct 19, 2024</td>
+                                <td>Emma Davis</td>
+                                <td>David Lee</td>
+                                <td><span class="badge-custom badge-info">Basic Package</span></td>
+                                <td class="fw-bold">$29.00</td>
+                                <td><span class="badge-custom badge-success">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Revenue Trend Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                datasets: [{
+                    label: 'Total Revenue',
+                    data: [45000, 52000, 48000, 61000, 58000, 63000, 67000, 71000, 68000, 67840],
+                    borderColor: '#6366f1',
+                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // Revenue Split Chart
+        const splitCtx = document.getElementById('revenueSplitChart').getContext('2d');
+        new Chart(splitCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Admin (80%)', 'Coaches (20%)'],
+                datasets: [{
+                    data: [54272, 13568],
+                    backgroundColor: ['#10b981', '#f59e0b']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                cutout: '70%'
+            }
+        });
+    </script>
+</body>
+</html>

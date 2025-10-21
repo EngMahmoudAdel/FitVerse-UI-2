@@ -1,0 +1,118 @@
+<!-- Admin Navigation Bar - Shared Component -->
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand" href="index.html">
+            <div class="logo-icon">💪</div>
+            FitVerse
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-dashboard.html" data-page="dashboard">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-users.html" data-page="users">
+                        <i class="bi bi-people"></i> Users
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-coaches.html" data-page="coaches">
+                        <i class="bi bi-person-badge"></i> Coaches
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-clients.html" data-page="clients">
+                        <i class="bi bi-person-check"></i> Clients
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-page="system">
+                        <i class="bi bi-gear"></i> System
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="admin-equipment.html" data-page="equipment">
+                            <i class="bi bi-tools me-2"></i>Equipment
+                        </a></li>
+                        <li><a class="dropdown-item" href="admin-exercises.html" data-page="exercises">
+                            <i class="bi bi-lightning me-2"></i>Exercises
+                        </a></li>
+                        <li><a class="dropdown-item" href="admin-anatomy.html" data-page="anatomy">
+                            <i class="bi bi-person-arms-up me-2"></i>Anatomy
+                        </a></li>
+                        <li><a class="dropdown-item" href="admin-muscles.html" data-page="muscles">
+                            <i class="bi bi-heart-pulse me-2"></i>Muscles
+                        </a></li>
+                        <li><a class="dropdown-item" href="admin-packages.html" data-page="packages">
+                            <i class="bi bi-box-seam me-2"></i>Packages
+                        </a></li>
+                        <li><a class="dropdown-item" href="admin-specialties.html" data-page="specialties">
+                            <i class="bi bi-award me-2"></i>Specialties
+                        </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-payments.html" data-page="payments">
+                        <i class="bi bi-cash-coin"></i> Payments
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin-reports.html" data-page="reports">
+                        <i class="bi bi-graph-up"></i> Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link notification-bell position-relative" href="notifications.html">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="notification-badge">5</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=6366f1&color=fff" alt="Admin" class="user-avatar">
+                        <span>Admin</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="profile.html">
+                            <i class="bi bi-person me-2"></i> Profile
+                        </a></li>
+                        <li><a class="dropdown-item" href="settings.html">
+                            <i class="bi bi-gear me-2"></i> Settings
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="login.html">
+                            <i class="bi bi-box-arrow-right me-2"></i> Logout
+                        </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Auto-highlight active page
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = document.body.getAttribute('data-page');
+        if (currentPage) {
+            // Highlight main nav items
+            document.querySelectorAll('.nav-link[data-page]').forEach(link => {
+                if (link.getAttribute('data-page') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Highlight dropdown items
+            document.querySelectorAll('.dropdown-item[data-page]').forEach(link => {
+                if (link.getAttribute('data-page') === currentPage) {
+                    link.classList.add('active');
+                    link.closest('.dropdown').querySelector('.nav-link').classList.add('active');
+                }
+            });
+        }
+    });
+</script>

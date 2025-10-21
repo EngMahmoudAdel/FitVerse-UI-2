@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FitVerse</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        }
+        
+        .auth-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .auth-left {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .auth-right {
+            padding: 3rem;
+        }
+        
+        .auth-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-control-auth {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 0.875rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control-auth:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+            outline: none;
+        }
+        
+        .btn-auth {
+            padding: 0.875rem;
+            border-radius: 10px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            border: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-auth:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        .social-btn {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 0.75rem;
+            background: white;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #475569;
+        }
+        
+        .social-btn:hover {
+            border-color: #6366f1;
+            background: #f8fafc;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="auth-card">
+                        <div class="row g-0">
+                            <!-- Left Side -->
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <div class="auth-left h-100">
+                                    <div class="auth-logo">
+                                        <span>💪</span> FitVerse
+                                    </div>
+                                    <h2 class="fw-bold mb-3">Welcome Back!</h2>
+                                    <p class="mb-4 opacity-90">Log in to continue your fitness journey and achieve your goals.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex gap-4 mb-4">
+                                            <div>
+                                                <h4 class="fw-bold mb-0">10K+</h4>
+                                                <small class="opacity-75">Active Users</small>
+                                            </div>
+                                            <div>
+                                                <h4 class="fw-bold mb-0">500+</h4>
+                                                <small class="opacity-75">Coaches</small>
+                                            </div>
+                                        </div>
+                                        <p class="small opacity-75 mb-0">"FitVerse transformed my life! Best fitness platform ever." - Sarah M.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Side -->
+                            <div class="col-lg-7">
+                                <div class="auth-right">
+                                    <div class="mb-4">
+                                        <h3 class="fw-bold mb-2">Sign In</h3>
+                                        <p class="text-muted">Enter your credentials to access your account</p>
+                                    </div>
+                                    
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">Email Address</label>
+                                            <input type="email" class="form-control form-control-auth" placeholder="your@email.com" required>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">Password</label>
+                                            <input type="password" class="form-control form-control-auth" placeholder="Enter your password" required>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="remember">
+                                                <label class="form-check-label" for="remember">
+                                                    Remember me
+                                                </label>
+                                            </div>
+                                            <a href="#" class="text-decoration-none" style="color: #6366f1;">Forgot Password?</a>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-auth w-100 mb-3">Sign In</button>
+                                        
+                                        <div class="text-center mb-3">
+                                            <span class="text-muted">or continue with</span>
+                                        </div>
+                                        
+                                        <div class="row g-2 mb-4">
+                                            <div class="col-6">
+                                                <button type="button" class="social-btn w-100">
+                                                    <i class="bi bi-google"></i> Google
+                                                </button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="button" class="social-btn w-100">
+                                                    <i class="bi bi-facebook"></i> Facebook
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="text-center">
+                                            <p class="text-muted mb-0">Don't have an account? <a href="register.html" class="text-decoration-none fw-semibold" style="color: #6366f1;">Sign Up</a></p>
+                                        </div>
+                                    </form>
+                                    
+                                    <!-- Quick Login Demo -->
+                                    <div class="mt-4 p-3" style="background: #f8fafc; border-radius: 12px;">
+                                        <p class="small fw-semibold mb-2">Quick Demo Login:</p>
+                                        <div class="d-flex gap-2 flex-wrap">
+                                            <a href="admin-dashboard.html" class="btn btn-sm btn-outline-custom">Admin</a>
+                                            <a href="coach-dashboard.html" class="btn btn-sm btn-outline-custom">Coach</a>
+                                            <a href="client-dashboard.html" class="btn btn-sm btn-outline-custom">Client</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

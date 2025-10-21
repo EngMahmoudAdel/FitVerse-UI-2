@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - FitVerse</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">💪</div>
+                FitVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin-dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html"><i class="bi bi-people"></i> Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-coaches.html"><i class="bi bi-person-badge"></i> Coaches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-clients.html"><i class="bi bi-person-check"></i> Clients</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-gear"></i> System
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="admin-equipment.html"><i class="bi bi-tools me-2"></i>Equipment</a></li>
+                            <li><a class="dropdown-item" href="admin-exercises.html"><i class="bi bi-lightning me-2"></i>Exercises</a></li>
+                            <li><a class="dropdown-item" href="admin-anatomy.html"><i class="bi bi-person-arms-up me-2"></i>Anatomy</a></li>
+                            <li><a class="dropdown-item" href="admin-muscles.html"><i class="bi bi-heart-pulse me-2"></i>Muscles</a></li>
+                            <li><a class="dropdown-item" href="admin-packages.html"><i class="bi bi-box-seam me-2"></i>Packages</a></li>
+                            <li><a class="dropdown-item" href="admin-specialties.html"><i class="bi bi-award me-2"></i>Specialties</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-payments.html"><i class="bi bi-cash-coin"></i> Payments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-reports.html"><i class="bi bi-graph-up"></i> Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link notification-bell position-relative" href="notifications.html">
+                            <i class="bi bi-bell fs-5"></i>
+                            <span class="notification-badge">5</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="https://ui-avatars.com/api/?name=Admin&background=6366f1&color=fff" alt="Admin" class="user-avatar">
+                            <span>Admin</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid px-4 py-4">
+        <!-- Page Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="fw-bold mb-1">Admin Dashboard</h2>
+                <p class="text-muted mb-0">Welcome back! Here's what's happening with FitVerse today.</p>
+            </div>
+            <div>
+                <button class="btn btn-primary-custom">
+                    <i class="bi bi-download"></i> Export Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-xl-3 col-md-6">
+                <div class="stat-card primary">
+                    <div class="stat-icon primary">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <div class="stat-value">2,543</div>
+                    <div class="stat-label">Total Users</div>
+                    <div class="stat-change positive">
+                        <i class="bi bi-arrow-up"></i> +12.5% from last month
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6">
+                <div class="stat-card success">
+                    <div class="stat-icon success">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+                    <div class="stat-value">487</div>
+                    <div class="stat-label">Active Coaches</div>
+                    <div class="stat-change positive">
+                        <i class="bi bi-arrow-up"></i> +8.2% from last month
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6">
+                <div class="stat-card warning">
+                    <div class="stat-icon warning">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+                    <div class="stat-value">1,234</div>
+                    <div class="stat-label">Packages Sold</div>
+                    <div class="stat-change positive">
+                        <i class="bi bi-arrow-up"></i> +23.1% from last month
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6">
+                <div class="stat-card danger">
+                    <div class="stat-icon danger">
+                        <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="stat-value">$67.8K</div>
+                    <div class="stat-label">Total Revenue</div>
+                    <div class="stat-change positive">
+                        <i class="bi bi-arrow-up"></i> +18.7% from last month
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+                <div class="card-custom">
+                    <div class="card-header-custom">
+                        <i class="bi bi-graph-up me-2"></i> Revenue Overview
+                    </div>
+                    <div class="card-body-custom">
+                        <canvas id="revenueChart" height="80"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card-custom">
+                    <div class="card-header-custom">
+                        <i class="bi bi-pie-chart me-2"></i> User Distribution
+                    </div>
+                    <div class="card-body-custom">
+                        <canvas id="userChart"></canvas>
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="d-flex align-items-center gap-2">
+                                    <span style="width: 12px; height: 12px; background: #6366f1; border-radius: 2px;"></span>
+                                    Clients
+                                </span>
+                                <strong>2,056 (81%)</strong>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="d-flex align-items-center gap-2">
+                                    <span style="width: 12px; height: 12px; background: #10b981; border-radius: 2px;"></span>
+                                    Coaches
+                                </span>
+                                <strong>487 (19%)</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tables Row -->
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card-custom">
+                    <div class="card-header-custom d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-clock-history me-2"></i> Recent Activities</span>
+                        <a href="#" class="text-white text-decoration-none small">View All</a>
+                    </div>
+                    <div class="card-body-custom p-0">
+                        <div class="table-responsive">
+                            <table class="table table-custom mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Activity</th>
+                                        <th>Type</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="https://ui-avatars.com/api/?name=Sarah+Miller&background=6366f1&color=fff" alt="User" style="width: 35px; height: 35px; border-radius: 50%;">
+                                                <div>
+                                                    <div class="fw-semibold">Sarah Miller</div>
+                                                    <small class="text-muted">Client</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Purchased Pro Package</td>
+                                        <td><span class="badge-custom badge-success">Purchase</span></td>
+                                        <td>2 min ago</td>
+                                        <td><span class="badge-custom badge-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="https://ui-avatars.com/api/?name=Mike+Johnson&background=10b981&color=fff" alt="User" style="width: 35px; height: 35px; border-radius: 50%;">
+                                                <div>
+                                                    <div class="fw-semibold">Mike Johnson</div>
+                                                    <small class="text-muted">Coach</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Registered as Coach</td>
+                                        <td><span class="badge-custom badge-primary">Registration</span></td>
+                                        <td>15 min ago</td>
+                                        <td><span class="badge-custom badge-warning">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="https://ui-avatars.com/api/?name=Emma+Davis&background=f59e0b&color=fff" alt="User" style="width: 35px; height: 35px; border-radius: 50%;">
+                                                <div>
+                                                    <div class="fw-semibold">Emma Davis</div>
+                                                    <small class="text-muted">Client</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Completed Workout Plan</td>
+                                        <td><span class="badge-custom badge-info">Activity</span></td>
+                                        <td>1 hour ago</td>
+                                        <td><span class="badge-custom badge-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="https://ui-avatars.com/api/?name=John+Smith&background=ef4444&color=fff" alt="User" style="width: 35px; height: 35px; border-radius: 50%;">
+                                                <div>
+                                                    <div class="fw-semibold">John Smith</div>
+                                                    <small class="text-muted">Coach</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Created New Exercise</td>
+                                        <td><span class="badge-custom badge-primary">Content</span></td>
+                                        <td>2 hours ago</td>
+                                        <td><span class="badge-custom badge-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <img src="https://ui-avatars.com/api/?name=Lisa+Anderson&background=6366f1&color=fff" alt="User" style="width: 35px; height: 35px; border-radius: 50%;">
+                                                <div>
+                                                    <div class="fw-semibold">Lisa Anderson</div>
+                                                    <small class="text-muted">Client</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Sent Feedback</td>
+                                        <td><span class="badge-custom badge-warning">Feedback</span></td>
+                                        <td>3 hours ago</td>
+                                        <td><span class="badge-custom badge-info">Reviewed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card-custom">
+                    <div class="card-header-custom">
+                        <i class="bi bi-star me-2"></i> Top Coaches
+                    </div>
+                    <div class="card-body-custom">
+                        <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://ui-avatars.com/api/?name=Alex+Turner&background=6366f1&color=fff" alt="Coach" style="width: 50px; height: 50px; border-radius: 50%;">
+                                <div>
+                                    <div class="fw-semibold">Alex Turner</div>
+                                    <small class="text-muted">156 Clients</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fw-bold" style="color: #10b981;">4.9</div>
+                                <small class="text-muted">★★★★★</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://ui-avatars.com/api/?name=Maria+Garcia&background=10b981&color=fff" alt="Coach" style="width: 50px; height: 50px; border-radius: 50%;">
+                                <div>
+                                    <div class="fw-semibold">Maria Garcia</div>
+                                    <small class="text-muted">142 Clients</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fw-bold" style="color: #10b981;">4.8</div>
+                                <small class="text-muted">★★★★★</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://ui-avatars.com/api/?name=David+Lee&background=f59e0b&color=fff" alt="Coach" style="width: 50px; height: 50px; border-radius: 50%;">
+                                <div>
+                                    <div class="fw-semibold">David Lee</div>
+                                    <small class="text-muted">128 Clients</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fw-bold" style="color: #10b981;">4.7</div>
+                                <small class="text-muted">★★★★☆</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://ui-avatars.com/api/?name=Sophie+Brown&background=ef4444&color=fff" alt="Coach" style="width: 50px; height: 50px; border-radius: 50%;">
+                                <div>
+                                    <div class="fw-semibold">Sophie Brown</div>
+                                    <small class="text-muted">115 Clients</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fw-bold" style="color: #10b981;">4.9</div>
+                                <small class="text-muted">★★★★★</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://ui-avatars.com/api/?name=Ryan+Wilson&background=3b82f6&color=fff" alt="Coach" style="width: 50px; height: 50px; border-radius: 50%;">
+                                <div>
+                                    <div class="fw-semibold">Ryan Wilson</div>
+                                    <small class="text-muted">98 Clients</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fw-bold" style="color: #10b981;">4.6</div>
+                                <small class="text-muted">★★★★☆</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Chart.js Configuration -->
+    <script>
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Revenue ($)',
+                    data: [45000, 52000, 48000, 61000, 58000, 63000, 67000, 71000, 68000, 75000, 72000, 78000],
+                    borderColor: '#6366f1',
+                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#6366f1',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // User Distribution Chart
+        const userCtx = document.getElementById('userChart').getContext('2d');
+        new Chart(userCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Clients', 'Coaches'],
+                datasets: [{
+                    data: [2056, 487],
+                    backgroundColor: ['#6366f1', '#10b981'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+    </script>
+</body>
+</html>

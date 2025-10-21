@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Packages - FitVerse Coach</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">💪</div>
+                FitVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="coach-dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="coach-exercises.html"><i class="bi bi-lightning"></i> Exercises</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="coach-plans.html"><i class="bi bi-calendar-check"></i> Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="coach-diet-plans.html"><i class="bi bi-egg-fried"></i> Diet Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="coach-clients.html"><i class="bi bi-people"></i> Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="coach-daily-logs.html"><i class="bi bi-journal-text"></i> Daily Logs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.html"><i class="bi bi-chat-dots"></i> Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link notification-bell position-relative" href="notifications.html">
+                            <i class="bi bi-bell fs-5"></i>
+                            <span class="notification-badge">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Turner&background=10b981&color=fff" alt="Coach" class="user-avatar">
+                            <span>Alex Turner</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid px-4 py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="fw-bold mb-1">My Training Packages</h2>
+                <p class="text-muted mb-0">Create and manage your 3-tier package offerings</p>
+            </div>
+        </div>
+
+        <!-- Revenue Overview -->
+        <div class="row g-4 mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card primary">
+                    <div class="stat-icon primary"><i class="bi bi-cash-stack"></i></div>
+                    <div class="stat-value">$9,204</div>
+                    <div class="stat-label">Total Revenue (This Month)</div>
+                    <div class="stat-change positive"><i class="bi bi-arrow-up"></i> +12.5%</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card success">
+                    <div class="stat-icon success"><i class="bi bi-wallet2"></i></div>
+                    <div class="stat-value">$1,841</div>
+                    <div class="stat-label">Your Commission (20%)</div>
+                    <div class="stat-change positive"><i class="bi bi-arrow-up"></i> +15.2%</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card warning">
+                    <div class="stat-icon warning"><i class="bi bi-people"></i></div>
+                    <div class="stat-value">156</div>
+                    <div class="stat-label">Active Subscribers</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card danger">
+                    <div class="stat-icon danger"><i class="bi bi-graph-up"></i></div>
+                    <div class="stat-value">$59</div>
+                    <div class="stat-label">Avg Package Price</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Alert -->
+        <div class="alert alert-info mb-4">
+            <i class="bi bi-info-circle me-2"></i>
+            <strong>Revenue Split:</strong> You earn 20% commission on all package sales. The platform takes 80% to cover infrastructure, support, and services.
+        </div>
+
+        <!-- Package Cards -->
+        <div class="row g-4 mb-4">
+            <!-- Package 1: Basic -->
+            <div class="col-lg-4">
+                <div class="card-custom h-100">
+                    <div class="card-header-custom d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-0 fw-bold">📦 Package 1: Basic</h5>
+                            <small class="text-muted">Entry-level package</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-custom" data-bs-toggle="modal" data-bs-target="#editPackage1Modal">
+                            <i class="bi bi-pencil"></i> Edit
+                        </button>
+                    </div>
+                    <div class="card-body-custom">
+                        <div class="mb-4">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <h2 class="fw-bold mb-0" style="color: #6366f1;">$29</h2>
+                                <span class="text-muted">/month</span>
+                            </div>
+                            <p class="text-muted small mb-0">Your commission: <strong class="text-success">$5.80/month</strong></p>
+                        </div>
+
+                        <h6 class="fw-bold mb-3">Features Included:</h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Access to Exercise Library</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Basic Training Plans</li>
+                            <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Chat Support</li>
+                            <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> AI Assistance</li>
+                            <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Video Calls</li>
+                        </ul>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Active Subscribers</span>
+                                <strong>52 clients</strong>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">Monthly Revenue</span>
+                                <strong class="text-success">$301.60</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-custom flex-grow-1" data-bs-toggle="modal" data-bs-target="#editPackage1Modal">
+                                <i class="bi bi-pencil"></i> Customize
+                            </button>
+                            <button class="btn btn-success-custom">
+                                <i class="bi bi-toggle-on"></i> Active
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 2: Pro -->
+            <div class="col-lg-4">
+                <div class="card-custom h-100" style="border: 2px solid #6366f1;">
+                    <div class="card-header-custom d-flex justify-content-between align-items-center" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color: white;">
+                        <div>
+                            <h5 class="mb-0 fw-bold">⭐ Package 2: Pro</h5>
+                            <small style="opacity: 0.9;">Most Popular</small>
+                        </div>
+                        <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#editPackage2Modal">
+                            <i class="bi bi-pencil"></i> Edit
+                        </button>
+                    </div>
+                    <div class="card-body-custom">
+                        <div class="mb-4">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <h2 class="fw-bold mb-0" style="color: #6366f1;">$59</h2>
+                                <span class="text-muted">/month</span>
+                            </div>
+                            <p class="text-muted small mb-0">Your commission: <strong class="text-success">$11.80/month</strong></p>
+                        </div>
+
+                        <h6 class="fw-bold mb-3">Features Included:</h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Access to Exercise Library</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Advanced Training Plans</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Real-time Chat Support</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> AI-Powered Recommendations</li>
+                            <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Video Calls</li>
+                        </ul>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Active Subscribers</span>
+                                <strong>78 clients</strong>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">Monthly Revenue</span>
+                                <strong class="text-success">$920.40</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-custom flex-grow-1" data-bs-toggle="modal" data-bs-target="#editPackage2Modal">
+                                <i class="bi bi-pencil"></i> Customize
+                            </button>
+                            <button class="btn btn-success-custom">
+                                <i class="bi bi-toggle-on"></i> Active
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 3: Elite -->
+            <div class="col-lg-4">
+                <div class="card-custom h-100">
+                    <div class="card-header-custom d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-0 fw-bold">👑 Package 3: Elite</h5>
+                            <small class="text-muted">Premium package</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-custom" data-bs-toggle="modal" data-bs-target="#editPackage3Modal">
+                            <i class="bi bi-pencil"></i> Edit
+                        </button>
+                    </div>
+                    <div class="card-body-custom">
+                        <div class="mb-4">
+                            <div class="d-flex align-items-baseline gap-2 mb-2">
+                                <h2 class="fw-bold mb-0" style="color: #6366f1;">$99</h2>
+                                <span class="text-muted">/month</span>
+                            </div>
+                            <p class="text-muted small mb-0">Your commission: <strong class="text-success">$19.80/month</strong></p>
+                        </div>
+
+                        <h6 class="fw-bold mb-3">Features Included:</h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Full Exercise Library</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Premium Training Plans</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 24/7 Chat Support</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Advanced AI Features</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Weekly Video Calls</li>
+                        </ul>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Active Subscribers</span>
+                                <strong>26 clients</strong>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">Monthly Revenue</span>
+                                <strong class="text-success">$514.80</strong>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-custom flex-grow-1" data-bs-toggle="modal" data-bs-target="#editPackage3Modal">
+                                <i class="bi bi-pencil"></i> Customize
+                            </button>
+                            <button class="btn btn-success-custom">
+                                <i class="bi bi-toggle-on"></i> Active
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Comparison Table -->
+        <div class="card-custom">
+            <div class="card-header-custom">
+                <i class="bi bi-table me-2"></i> Package Comparison
+            </div>
+            <div class="card-body-custom p-0">
+                <div class="table-responsive">
+                    <table class="table table-custom mb-0">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th class="text-center">Basic ($29)</th>
+                                <th class="text-center">Pro ($59)</th>
+                                <th class="text-center">Elite ($99)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Exercise Library Access</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Training Plans</td>
+                                <td class="text-center">Basic</td>
+                                <td class="text-center">Advanced</td>
+                                <td class="text-center">Premium</td>
+                            </tr>
+                            <tr>
+                                <td>Chat Support</td>
+                                <td class="text-center"><i class="bi bi-x-circle-fill text-muted fs-5"></i></td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            </tr>
+                            <tr>
+                                <td>AI Assistance</td>
+                                <td class="text-center"><i class="bi bi-x-circle-fill text-muted fs-5"></i></td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Video Calls</td>
+                                <td class="text-center"><i class="bi bi-x-circle-fill text-muted fs-5"></i></td>
+                                <td class="text-center"><i class="bi bi-x-circle-fill text-muted fs-5"></i></td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Diet Plans</td>
+                                <td class="text-center"><i class="bi bi-x-circle-fill text-muted fs-5"></i></td>
+                                <td class="text-center">Basic</td>
+                                <td class="text-center">Custom</td>
+                            </tr>
+                            <tr style="background: #f8fafc; font-weight: 600;">
+                                <td>Your Commission/Client</td>
+                                <td class="text-center text-success">$5.80</td>
+                                <td class="text-center text-success">$11.80</td>
+                                <td class="text-center text-success">$19.80</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Package 1 Modal -->
+    <div class="modal fade" id="editPackage1Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 16px; border: none;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color: white; border: none;">
+                    <h5 class="modal-title fw-bold">Edit Package 1: Basic</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Package price is fixed at <strong>$29/month</strong>. You can customize features and description.
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Package Name</label>
+                            <input type="text" class="form-control-custom" value="Basic Package">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Description</label>
+                            <textarea class="form-control-custom" rows="3">Perfect for beginners starting their fitness journey</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Features (one per line)</label>
+                            <textarea class="form-control-custom" rows="5">Access to Exercise Library
+Basic Training Plans
+Progress Tracking
+Email Support</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary-custom">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Package 2 Modal -->
+    <div class="modal fade" id="editPackage2Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 16px; border: none;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color: white; border: none;">
+                    <h5 class="modal-title fw-bold">Edit Package 2: Pro</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Package price is fixed at <strong>$59/month</strong>. You can customize features and description.
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Package Name</label>
+                            <input type="text" class="form-control-custom" value="Pro Package">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Description</label>
+                            <textarea class="form-control-custom" rows="3">For serious athletes with personalized coaching</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Features (one per line)</label>
+                            <textarea class="form-control-custom" rows="6">Full Exercise Library
+Advanced Training Plans
+Real-time Chat Support
+AI-Powered Recommendations
+Basic Diet Plans
+Weekly Check-ins</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary-custom">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Package 3 Modal -->
+    <div class="modal fade" id="editPackage3Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 16px; border: none;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); color: white; border: none;">
+                    <h5 class="modal-title fw-bold">Edit Package 3: Elite</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Package price is fixed at <strong>$99/month</strong>. You can customize features and description.
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Package Name</label>
+                            <input type="text" class="form-control-custom" value="Elite Package">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Description</label>
+                            <textarea class="form-control-custom" rows="3">Ultimate transformation with premium features</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label-custom">Features (one per line)</label>
+                            <textarea class="form-control-custom" rows="7">Full Exercise Library
+Premium Training Plans
+24/7 Chat Support
+Advanced AI Features
+Custom Diet Plans
+Weekly Video Calls
+Priority Support</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary-custom">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

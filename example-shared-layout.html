@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Layout Example - FitVerse</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-layout="admin" data-page="dashboard">
+    
+    <!-- Navbar Container (Auto-loaded) -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <div class="container-fluid px-4 py-4">
+        
+        <!-- Page Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="fw-bold mb-1">🎨 Shared Layout Example</h2>
+                <p class="text-muted mb-0">This page demonstrates the shared layout system</p>
+            </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="card-custom mb-4">
+            <div class="card-header-custom bg-success text-white">
+                <i class="bi bi-check-circle me-2"></i> ✅ Shared Layout Active!
+            </div>
+            <div class="card-body-custom">
+                <h5 class="mb-3">How it works:</h5>
+                <ol class="mb-0">
+                    <li class="mb-2">
+                        <strong>Navbar is loaded automatically</strong> from <code>layouts/admin-navbar.html</code>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Active page is highlighted</strong> based on <code>data-page="dashboard"</code>
+                    </li>
+                    <li class="mb-2">
+                        <strong>No need to copy navbar code</strong> - just use <code>&lt;div id="navbar-container"&gt;&lt;/div&gt;</code>
+                    </li>
+                    <li>
+                        <strong>Easy to maintain</strong> - update navbar once, applies everywhere!
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Layout Types -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="card-custom h-100">
+                    <div class="card-body-custom text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-shield-check" style="font-size: 3rem; color: #6366f1;"></i>
+                        </div>
+                        <h5>Admin Layout</h5>
+                        <p class="text-muted mb-3">For admin dashboard pages</p>
+                        <code class="d-block bg-light p-2 rounded">data-layout="admin"</code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-custom h-100">
+                    <div class="card-body-custom text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-person-badge" style="font-size: 3rem; color: #10b981;"></i>
+                        </div>
+                        <h5>Coach Layout</h5>
+                        <p class="text-muted mb-3">For coach dashboard pages</p>
+                        <code class="d-block bg-light p-2 rounded">data-layout="coach"</code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-custom h-100">
+                    <div class="card-body-custom text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-person-circle" style="font-size: 3rem; color: #f59e0b;"></i>
+                        </div>
+                        <h5>Client Layout</h5>
+                        <p class="text-muted mb-3">For client dashboard pages</p>
+                        <code class="d-block bg-light p-2 rounded">data-layout="client"</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Example -->
+        <div class="card-custom mb-4">
+            <div class="card-header-custom">
+                <i class="bi bi-code-slash me-2"></i> Code Example
+            </div>
+            <div class="card-body-custom">
+                <h6 class="mb-3">Minimal HTML needed:</h6>
+                <pre class="bg-dark text-light p-3 rounded"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;!-- CSS links --&gt;
+&lt;/head&gt;
+&lt;body data-layout="admin" data-page="dashboard"&gt;
+    
+    &lt;!-- Navbar Container --&gt;
+    &lt;div id="navbar-container"&gt;&lt;/div&gt;
+
+    &lt;!-- Your Content --&gt;
+    &lt;div class="container-fluid px-4 py-4"&gt;
+        &lt;h2&gt;My Page&lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Scripts --&gt;
+    &lt;script src="js/layout-loader.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="card-custom">
+            <div class="card-header-custom">
+                <i class="bi bi-star me-2"></i> Benefits
+            </div>
+            <div class="card-body-custom">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="flex-shrink-0">
+                                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-lightning"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Faster Development</h6>
+                                <p class="text-muted mb-0">No need to copy navbar code in every page</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-gear"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Easy Maintenance</h6>
+                                <p class="text-muted mb-0">Update navbar once, applies everywhere</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="flex-shrink-0">
+                                <div class="bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-code"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Cleaner Code</h6>
+                                <p class="text-muted mb-0">Less repetition, more organized</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="flex-shrink-0">
+                                <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-check-circle"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Auto-Highlight</h6>
+                                <p class="text-muted mb-0">Active page is automatically highlighted</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Layout Loader -->
+    <script src="js/layout-loader.js"></script>
+
+</body>
+</html>
