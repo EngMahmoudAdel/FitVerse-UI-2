@@ -54,6 +54,7 @@
             font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
@@ -279,7 +280,7 @@
                     <i class="bi bi-shield-check"></i>
                 </div>
                 <h3 class="section-title">Admin Panel</h3>
-                <p class="section-count">12 صفحة</p>
+                <p class="section-count">13 صفحة</p>
                 <button class="section-btn">عرض الصفحات</button>
             </div>
             
@@ -299,7 +300,7 @@
                     <i class="bi bi-person-circle"></i>
                 </div>
                 <h3 class="section-title">Client Panel</h3>
-                <p class="section-count">7 صفحات</p>
+                <p class="section-count">12 صفحة</p>
                 <button class="section-btn">عرض الصفحات</button>
             </div>
             
@@ -317,7 +318,7 @@
         <!-- Admin Pages List -->
         <div id="admin-pages" class="pages-list">
             <h4 style="color: #667eea; margin-bottom: 15px;">
-                <i class="bi bi-shield-check"></i> Admin Pages (12)
+                <i class="bi bi-shield-check"></i> Admin Pages (13)
             </h4>
             <div class="pages-grid">
                 <a href="admin-dashboard.html" class="page-link">
@@ -368,6 +369,10 @@
                     <i class="bi bi-box-seam"></i>
                     <span>Packages</span>
                 </a>
+                <a href="admin-coach-packages.html" class="page-link">
+                    <i class="bi bi-link-45deg"></i>
+                    <span>Coach-Package Matrix</span>
+                </a>
             </div>
             <button class="close-btn" onclick="closeSection('admin')">إغلاق</button>
         </div>
@@ -417,20 +422,40 @@
         <!-- Client Pages List -->
         <div id="client-pages" class="pages-list">
             <h4 style="color: #4facfe; margin-bottom: 15px;">
-                <i class="bi bi-person-circle"></i> Client Pages (7)
+                <i class="bi bi-person-circle"></i> Client Pages (12)
             </h4>
             <div class="pages-grid">
                 <a href="client-dashboard.html" class="page-link">
                     <i class="bi bi-speedometer2"></i>
                     <span>Dashboard</span>
                 </a>
+                <a href="client-packages-overview.html" class="page-link">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Browse Packages</span>
+                </a>
+                <a href="client-select-coach.html" class="page-link">
+                    <i class="bi bi-person-check"></i>
+                    <span>Select Coach (by Package)</span>
+                </a>
+                <a href="client-coaches-list.html" class="page-link">
+                    <i class="bi bi-people"></i>
+                    <span>Browse Coaches</span>
+                </a>
+                <a href="client-coach-packages.html" class="page-link">
+                    <i class="bi bi-box"></i>
+                    <span>Coach Packages</span>
+                </a>
+                <a href="client-checkout.html" class="page-link">
+                    <i class="bi bi-cart-check"></i>
+                    <span>Checkout</span>
+                </a>
                 <a href="client-coaches.html" class="page-link">
                     <i class="bi bi-person-badge"></i>
-                    <span>Browse Coaches</span>
+                    <span>My Coach</span>
                 </a>
                 <a href="client-packages.html" class="page-link">
                     <i class="bi bi-box-seam"></i>
-                    <span>My Packages</span>
+                    <span>My Package</span>
                 </a>
                 <a href="client-workouts.html" class="page-link">
                     <i class="bi bi-activity"></i>
@@ -500,11 +525,11 @@
             <p><strong>FitVerse</strong> - Complete Gym Management System</p>
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-number">30</div>
+                    <div class="stat-number">36</div>
                     <div class="stat-label">Total Pages</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">12</div>
+                    <div class="stat-number">13</div>
                     <div class="stat-label">Admin</div>
                 </div>
                 <div class="stat-item">
@@ -512,7 +537,7 @@
                     <div class="stat-label">Coach</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">7</div>
+                    <div class="stat-number">12</div>
                     <div class="stat-label">Client</div>
                 </div>
                 <div class="stat-item">

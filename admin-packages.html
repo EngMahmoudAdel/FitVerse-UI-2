@@ -84,6 +84,12 @@
             <div>
                 <h2 class="fw-bold mb-1">Packages Management</h2>
                 <p class="text-muted mb-0">Add, edit, and manage all training packages</p>
+                <div class="alert alert-info mt-2 mb-0 py-2 px-3" style="font-size: 0.9rem;">
+                    <i class="bi bi-info-circle me-2"></i>
+                    <strong>Note:</strong> To assign packages to coaches, go to 
+                    <a href="admin-coaches.html" class="alert-link">Coaches Management</a> or 
+                    <a href="admin-coach-packages.html" class="alert-link">Coach-Package Matrix</a>
+                </div>
             </div>
             <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#addPackageModal">
                 <i class="bi bi-plus-circle"></i> Add New Package
@@ -136,11 +142,9 @@
                     </div>
                     <div class="col-md-3">
                         <select class="form-select">
-                            <option selected>Filter by Coach</option>
-                            <option>Alex Turner</option>
-                            <option>Maria Garcia</option>
-                            <option>David Lee</option>
-                            <option>Sophie Brown</option>
+                            <option selected>Filter by Status</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
                         </select>
                     </div>
                     <div class="col-md-2">
@@ -150,13 +154,6 @@
                             <option>3 Months</option>
                             <option>6 Months</option>
                             <option>12 Months</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <select class="form-select">
-                            <option selected>Status</option>
-                            <option>Active</option>
-                            <option>Inactive</option>
                         </select>
                     </div>
                     <div class="col-md-1">
@@ -183,7 +180,6 @@
                                 <th>Description</th>
                                 <th>Price</th>
                                 <th>Duration</th>
-                                <th>Assigned Coach</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -200,12 +196,7 @@
                                 <td>Basic training plan for beginners</td>
                                 <td><strong class="text-success">$29/mo</strong></td>
                                 <td><span class="badge bg-info">1 Month</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="https://ui-avatars.com/api/?name=Alex+Turner&background=10b981&color=fff" alt="Coach" style="width: 30px; height: 30px; border-radius: 50%;">
-                                        <span>Alex Turner</span>
-                                    </div>
-                                </td>
+                                <td><span class="badge bg-success">Active</span></td>
                                 <td>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" checked>
@@ -231,12 +222,7 @@
                                 <td>Advanced training with nutrition plan</td>
                                 <td><strong class="text-success">$59/mo</strong></td>
                                 <td><span class="badge bg-primary">3 Months</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="https://ui-avatars.com/api/?name=Maria+Garcia&background=f59e0b&color=fff" alt="Coach" style="width: 30px; height: 30px; border-radius: 50%;">
-                                        <span>Maria Garcia</span>
-                                    </div>
-                                </td>
+                                <td><span class="badge bg-success">Active</span></td>
                                 <td>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" checked>
@@ -262,12 +248,7 @@
                                 <td>Premium training with personal coaching</td>
                                 <td><strong class="text-success">$99/mo</strong></td>
                                 <td><span class="badge bg-success">6 Months</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="https://ui-avatars.com/api/?name=David+Lee&background=6366f1&color=fff" alt="Coach" style="width: 30px; height: 30px; border-radius: 50%;">
-                                        <span>David Lee</span>
-                                    </div>
-                                </td>
+                                <td><span class="badge bg-success">Active</span></td>
                                 <td>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" checked>
@@ -293,12 +274,7 @@
                                 <td>Focus on strength and muscle building</td>
                                 <td><strong class="text-success">$79/mo</strong></td>
                                 <td><span class="badge bg-primary">3 Months</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="https://ui-avatars.com/api/?name=Sophie+Brown&background=ef4444&color=fff" alt="Coach" style="width: 30px; height: 30px; border-radius: 50%;">
-                                        <span>Sophie Brown</span>
-                                    </div>
-                                </td>
+                                <td><span class="badge bg-warning">Inactive</span></td>
                                 <td>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox">
@@ -324,12 +300,7 @@
                                 <td>High-intensity cardio and endurance training</td>
                                 <td><strong class="text-success">$49/mo</strong></td>
                                 <td><span class="badge bg-info">1 Month</span></td>
-                                <td>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="https://ui-avatars.com/api/?name=Alex+Turner&background=10b981&color=fff" alt="Coach" style="width: 30px; height: 30px; border-radius: 50%;">
-                                        <span>Alex Turner</span>
-                                    </div>
-                                </td>
+                                <td><span class="badge bg-success">Active</span></td>
                                 <td>
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" checked>
@@ -398,21 +369,11 @@
                             <div class="col-md-6">
                                 <label class="form-label-custom">Duration</label>
                                 <select class="form-control-custom">
-                                    <option>Select duration...</option>
+                                    <option selected>Duration</option>
                                     <option>1 Month</option>
                                     <option>3 Months</option>
                                     <option>6 Months</option>
                                     <option>12 Months</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label-custom">Assigned Coach</label>
-                                <select class="form-control-custom">
-                                    <option>Select coach...</option>
-                                    <option>Alex Turner</option>
-                                    <option>Maria Garcia</option>
-                                    <option>David Lee</option>
-                                    <option>Sophie Brown</option>
                                 </select>
                             </div>
                             <div class="col-12">
@@ -467,19 +428,11 @@
                             <div class="col-md-6">
                                 <label class="form-label-custom">Duration</label>
                                 <select class="form-control-custom">
-                                    <option selected>1 Month</option>
+                                    <option selected>Duration</option>
+                                    <option>1 Month</option>
                                     <option>3 Months</option>
                                     <option>6 Months</option>
                                     <option>12 Months</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label-custom">Assigned Coach</label>
-                                <select class="form-control-custom">
-                                    <option selected>Alex Turner</option>
-                                    <option>Maria Garcia</option>
-                                    <option>David Lee</option>
-                                    <option>Sophie Brown</option>
                                 </select>
                             </div>
                             <div class="col-12">
